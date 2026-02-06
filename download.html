@@ -1,57 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Decline of Nutrients</title>
-    <style>
-        body { font-family: Arial, sans-serif; margin: 40px; background: #fff; color: #333; line-height: 1.6; }
-        header { text-align: center; margin-bottom: 40px; }
-        h1 { font-size: 2.5em; color: #2a6f97; }
-        section { margin-bottom: 30px; }
-        footer { text-align: center; font-size: 0.9em; margin-top: 50px; border-top: 1px solid #ccc; padding-top: 20px; }
-    </style>
-</head>
+<!DOCTYPE html><html lang="en"><head>  <meta charset="UTF-8">  <title>Download – The Decline of Nutrients</title>  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>    body {      font-family: Arial, sans-serif;      background: #111;      color: #fff;      display: flex;      justify-content: center;      align-items: center;      height: 100vh;      margin: 0;    }    .box {      background: #1c1c1c;      padding: 40px;      border-radius: 8px;      text-align: center;      max-width: 500px;    }    a.button {      display: inline-block;      margin-top: 20px;      padding: 15px 25px;      background: #2ecc71;      color: #000;      text-decoration: none;      font-weight: bold;      border-radius: 5px;    }  </style></head>
 <body>
-
-<header>
-    <h1>The Decline of Nutrients in Our Food</h1>
-    <p>An overview of how nutrient levels in crops have changed over time</p>
-</header>
-
-<section>
-    <h2>What Is Nutrient Decline?</h2>
-    <p>
-        Scientific research shows that many fruits, vegetables, and grains grown today contain fewer essential nutrients than crops from decades past. Over the last 50–70 years, there have been measurable declines in minerals, vitamins, and protein levels in common crops. 
-    </p>
-</section>
-
-<section>
-    <h2>Historical Trend: Evidence from Studies</h2>
-    <p>
-        Studies comparing USDA data from the 1950s to the late 20th century found declines in nutrients such as protein, calcium, iron, riboflavin (vitamin B2), and vitamin C in many crops. This decline has been linked to a “dilution effect,” where higher yields dilute nutrient concentrations.
-    </p>
-</section>
-
-<section>
-    <h2>Causes of Nutrient Decline</h2>
-    <ul>
-        <li><strong>Selective Breeding:</strong> Crops bred for bigger size and yield often have lower nutrient density.</li>
-        <li><strong>Soil Depletion:</strong> Intensive farming and reduced crop rotation reduce minerals in soil available to plants.</li>
-        <li><strong>Climate Change & CO₂ Levels:</strong> Elevated atmospheric CO₂ can increase crop size but reduce micronutrient density like zinc and iron.</li>
-    </ul>
-</section>
-
-<section>
-    <h2>Impact on Health</h2>
-    <p>
-        Reduced nutrient content in food crops can contribute to “hidden hunger,” where calorie needs are met but essential vitamins and minerals are lacking, potentially affecting immune function, energy, and long-term wellbeing.
-    </p>
-</section>
-
-<footer>
-    <p>Compiled from scientific sources and global research.</p>
-</footer>
-
-</body>
-</html>
+<div class="box" id="content">  <h2>Checking payment...</h2></div>
+<script>  const paid = sessionStorage.getItem("paid");
+  if (paid === "true") {    document.getElementById("content").innerHTML = `      <h1>Payment Successful </h1>      <p>Your download is ready.</p>      <a class="button" href="https://drive.google.com/file/d/11IRGaAnkzk-XSayNeGsaMKuMCNldDWaY/view?usp=sharing" target="_blank">        Download The Decline of Nutrients      </a>    `;  } else {    document.getElementById("content").innerHTML = `      <h1>Access Denied </h1>      <p>You must complete payment first.</p>      <a class="button" href="index.html">Go Back</a>    `;  }</script>
+</body></html>
