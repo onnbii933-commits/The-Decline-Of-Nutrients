@@ -1,116 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>The Decline of Nutrients</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <title>The Decline of Nutrients – $4 eBook</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- PayPal Client ID -->
-    <script src="https://www.paypal.com/sdk/js?client-id=AR6dTogOGMIS6XxXXqI5uvakOLj5gYpX84Q-Tidv7DJmOFS_Df9244TXEThsgM-JNxIVWHYErLW7Wr1x&currency=USD"></script>
+  <script src="https://www.paypal.com/sdk/js?client-id=AR6dTogOGMIS6XxXXqI5uvakOLj5gYpX84Q-Tidv7DJmOFS_Df9244TXEThsgM-JNxIVWHYErLW7Wr1x&currency=USD&components=buttons"></script>
 
-    <style>
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-            background: #f4f6f8;
-            margin: 0;
-            color: #222;
-        }
-
-        header {
-            background: #2a6f97;
-            color: #fff;
-            padding: 40px 20px;
-            text-align: center;
-        }
-
-        main {
-            max-width: 900px;
-            margin: auto;
-            background: #fff;
-            padding: 40px 20px;
-        }
-
-        h1, h2 {
-            color: #2a6f97;
-        }
-
-        .paypal-box {
-            margin-top: 40px;
-            padding: 25px;
-            background: #eef6fb;
-            border-left: 5px solid #2a6f97;
-            border-radius: 6px;
-        }
-
-        footer {
-            text-align: center;
-            padding: 25px;
-            background: #eaeaea;
-            font-size: 0.9em;
-        }
-    </style>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 700px;
+      margin: 40px auto;
+      background: #fff;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+    h1 {
+      margin-bottom: 10px;
+    }
+    .price {
+      font-size: 26px;
+      font-weight: bold;
+      color: #2c7;
+      margin: 15px 0;
+    }
+    .desc {
+      font-size: 16px;
+      color: #444;
+      line-height: 1.6;
+    }
+    footer {
+      margin-top: 30px;
+      font-size: 13px;
+      color: #777;
+    }
+  </style>
 </head>
+
 <body>
 
-<header>
-    <h1>The Decline of Nutrients</h1>
-    <p>Support independent research & access the source material</p>
-</header>
+<div class="container">
+  <h1>The Decline of Nutrients</h1>
+  <p class="price">$4 – Instant Download</p>
 
-<main>
+  <p class="desc">
+    Discover how modern food systems, soil depletion, and industrial farming
+    are silently reducing the nutritional value of what we eat.
+    This book exposes the hidden crisis affecting global health.
+  </p>
 
-    <section>
-        <h2>Support This Work</h2>
-        <p>
-            You can support this research or purchase access using PayPal.
-            Card payments are accepted — no PayPal account required.
-        </p>
-    </section>
+  <div id="paypal-button-container"></div>
 
-    <section class="paypal-box">
-        <h2>Pay with PayPal or Card</h2>
+  <footer>
+    Contact: motsoenengnapo66@gmail.com<br>
+    © 2026 DE BOOK
+  </footer>
+</div>
 
-        <!-- PayPal Button Container -->
-        <div id="paypal-button-container"></div>
-    </section>
-
-</main>
-
-<footer>
-    <p>© 2026 — The Decline of Nutrients</p>
-</footer>
-
-<!-- PayPal Button Script -->
 <script>
 paypal.Buttons({
-    style: {
-        layout: 'vertical',
-        color:  'blue',
-        shape:  'rect',
-        label:  'paypal'
-    },
+  fundingSource: paypal.FUNDING.CARD,
 
-    createOrder: function(data, actions) {
-        return actions.order.create({
-            purchase_units: [{
-                amount: {
-                    value: '5.00'   // CHANGE PRICE HERE
-                },
-                description: 'The Decline of Nutrients – Source PDF'
-            }]
-        });
-    },
+  createOrder: function(data, actions) {
+    return actions.order.create({
+      purchase_units: [{
+        amount: {
+          value: '4.00'
+        },
+        description: 'The Decline of Nutrients eBook'
+      }]
+    });
+  },
 
-    onApprove: function(data, actions) {
-        return actions.order.capture().then(function(details) {
-            alert('Payment completed by ' + details.payer.name.given_name);
-        });
-    },
+  onApprove: function(data, actions) {
+    return actions.order.capture().then(function(details) {
+      // Store payment confirmation locally
+      sessionStorage.setItem("paid", "true");
 
-    onError: function(err) {
-        console.error(err);
-        alert('Payment could not be processed.');
-    }
+      // Redirect to download page
+      window.location.href = "download.html";
+    });
+  },
+
+  onError: function(err) {
+    alert("Payment failed. Please try again.");
+    console.error(err);
+  }
+
 }).render('#paypal-button-container');
 </script>
 
